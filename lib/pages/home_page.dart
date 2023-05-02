@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             //#body
             Expanded(
               child: GridView.count(
@@ -134,7 +134,7 @@ class _HomePageState extends State<HomePage> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.end,
-          children: [
+          children: const [
             Icon(
               Icons.star_border,
               color: Colors.yellow,
