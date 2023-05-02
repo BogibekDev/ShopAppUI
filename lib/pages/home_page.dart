@@ -11,13 +11,17 @@ class _HomePageState extends State<HomePage> {
   final List<String> _listItem = [
     "assets/images/img_0.png",
     "assets/images/img_1.png",
-    "assets/images/img_2.png",
     "assets/images/img_3.png",
     "assets/images/img_0.png",
+    "assets/images/img_3.png",
+    "assets/images/img_2.png",
     "assets/images/img_1.png",
     "assets/images/img_2.png",
     "assets/images/img_3.png",
+    "assets/images/img_0.png",
     "assets/images/img_2.png",
+    "assets/images/img_2.png",
+    "assets/images/img_1.png",
     "assets/images/img_3.png",
   ];
 
@@ -79,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                       "Lifestyle sale",
                       style: TextStyle(color: Colors.white, fontSize: 35),
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     Container(
                       height: 50,
                       margin: const EdgeInsets.symmetric(horizontal: 40),
@@ -98,6 +102,44 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            SizedBox(height: 10),
+            //#body
+            Expanded(
+              child: GridView.count(
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                crossAxisCount: 2,
+                children: _listItem.map((item) => sellOfList(item)).toList(),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget sellOfList(String item) {
+    return Card(
+      color: Colors.transparent,
+      elevation: 0,
+      child: Container(
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(
+            image: AssetImage(item),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Icon(
+              Icons.star_border,
+              color: Colors.yellow,
+              size: 35,
+            )
           ],
         ),
       ),
